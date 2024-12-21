@@ -13,15 +13,25 @@
     "prefer-stable": true,
     "require": {
         "php": "^8.1",
-        "laravel/framework": "^10.0",
+        "illuminate/support": "^10.0",
+        "illuminate/database": "^10.0",
         "filament/filament": "^3.0",
         "filament/forms": "^3.0",
         "filament/tables": "^3.0",
         "filament/notifications": "^3.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.0"
+    },
     "autoload": {
         "psr-4": {
             "FilamentBlogy\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FilamentBlogy\\Tests\\": "tests"
         }
     },
     "extra": {
@@ -30,5 +40,19 @@
                 "FilamentBlogy\\FilamentBlogyServiceProvider"
             ]
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "keywords": [
+        "laravel",
+        "filament",
+        "blog",
+        "seo",
+        "cms"
+    ]
 }

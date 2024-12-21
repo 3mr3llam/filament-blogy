@@ -2,6 +2,12 @@
 
 A powerful and elegant blog package for Laravel Filament v3 with SEO features.
 
+## Requirements
+
+- PHP 8.1 or higher
+- Laravel 10.0 or higher
+- Filament 3.x
+
 ## Features
 
 - Modern, responsive blog management interface
@@ -11,6 +17,7 @@ A powerful and elegant blog package for Laravel Filament v3 with SEO features.
 - Rich text editing
 - Scheduled publishing
 - Open Graph meta data support
+- Table prefix support to avoid conflicts
 
 ## Installation
 
@@ -30,6 +37,35 @@ php artisan vendor:publish --provider="FilamentBlogy\\FilamentBlogyServiceProvid
 
 ```bash
 php artisan migrate
+```
+
+## Configuration
+
+You can customize the package behavior in the published config file:
+
+```php
+// config/blog.php
+
+return [
+    // Set a custom table prefix to avoid conflicts
+    'table_prefix' => 'blogy_',
+
+    // Number of posts to show per page
+    'posts_per_page' => 10,
+
+    // Default meta data
+    'default_meta' => [
+        'title' => 'My Blog',
+        'description' => 'A Laravel blog with SEO features',
+        'keywords' => 'blog, laravel, seo',
+    ],
+
+    // Feature toggles
+    'enable_comments' => true,
+
+    // Access control
+    'admin_middleware' => ['auth', 'admin'],
+];
 ```
 
 ## Usage
@@ -55,16 +91,22 @@ Each post can have:
 - Open Graph description
 - Open Graph image
 
-## Requirements
+## Changelog
 
-- PHP 8.1+
-- Laravel 10.x
-- Filament 3.x
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Security
+
+If you discover any security related issues, please email iacoder@live.com instead of using the issue tracker.
+
+## Credits
+
+- [Amr Allam](https://github.com/YOUR_GITHUB_USERNAME)
 
 ## License
 
-MIT License
-
-## Author
-
-Amr Allam (iacoder@live.com)
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
