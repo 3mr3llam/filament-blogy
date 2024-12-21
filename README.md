@@ -5,7 +5,7 @@ A powerful and elegant blog package for Laravel Filament v3 with SEO features.
 ## Requirements
 
 - PHP 8.1 or higher
-- Laravel 10.0 or higher
+- Laravel 10.0 or Laravel 11.0
 - Filament 3.x
 
 ## Features
@@ -90,6 +90,13 @@ Each post can have:
 - Open Graph title
 - Open Graph description
 - Open Graph image
+
+## Version Compatibility
+
+| Laravel Version | Package Version |
+|----------------|-----------------|
+| 10.x           | ^1.0           |
+| 11.x           | ^1.0           |
 
 ## Changelog
 
