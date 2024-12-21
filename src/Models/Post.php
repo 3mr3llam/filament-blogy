@@ -24,9 +24,15 @@ class Post extends Model
         'published_at' => 'datetime',
     ];
 
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->setTable(config('blog.table_prefix', 'blogy_') . 'posts');
+    }
+
     public function meta(): HasOne
     {
-        return $this->hasOne(PostMeta::class);
+        return $this->hasOne(PostMeta::class, 'post_id');
     }
 
     public function getRouteKeyName(): string

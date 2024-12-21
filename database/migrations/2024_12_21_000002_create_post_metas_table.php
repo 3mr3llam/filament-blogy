@@ -8,9 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('post_metas', function (Blueprint $table) {
+        $tablePrefix = config('blog.table_prefix', 'blogy_');
+        
+        Schema::create($tablePrefix . 'post_metas', function (Blueprint $table) use ($tablePrefix) {
             $table->id();
-            $table->foreignId('post_id')->constrained()->onDelete('cascade');
+            $table->foreignId('post_id')->constrained($tablePrefix . 'posts')->onDelete('cascade');
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
             $table->string('meta_keywords')->nullable();
@@ -23,6 +25,7 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('post_metas');
+        $tablePrefix = config('blog.table_prefix', 'blogy_');
+        Schema::dropIfExists($tablePrefix . 'post_metas');
     }
 };

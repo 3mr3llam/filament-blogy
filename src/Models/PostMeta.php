@@ -3,6 +3,7 @@
 namespace FilamentBlogy\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PostMeta extends Model
 {
@@ -16,8 +17,14 @@ class PostMeta extends Model
         'og_image'
     ];
 
-    public function post()
+    public function __construct(array $attributes = [])
     {
-        return $this->belongsTo(Post::class);
+        parent::__construct($attributes);
+        $this->setTable(config('blog.table_prefix', 'blogy_') . 'post_metas');
+    }
+
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class, 'post_id');
     }
 }
