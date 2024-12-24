@@ -1,11 +1,11 @@
 <?php
 
-namespace Vendor\LaravelBlog\Http\Livewire;
+namespace FilamentBlogy\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
-use Vendor\LaravelBlog\Models\Post;
+use FilamentBlogy\Models\Post;
 
 class CreatePost extends Component
 {

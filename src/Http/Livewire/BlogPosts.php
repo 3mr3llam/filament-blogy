@@ -1,10 +1,10 @@
 <?php
 
-namespace Vendor\LaravelBlog\Http\Livewire;
+namespace FilamentBlogy\Http\Livewire;
 
 use Livewire\Component;
 use Livewire\WithPagination;
-use Vendor\LaravelBlog\Models\Post;
+use FilamentBlogy\Models\Post;
 
 class BlogPosts extends Component
 {
